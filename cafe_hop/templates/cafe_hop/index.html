@@ -10,11 +10,13 @@
 
 
 
-{% if cafe_list %}
+{% if cafe_dict %}
 	<div id = 'menu-centered'>
 		<ul>
-		{% for cafe in cafe_list %}
-			<li><a href="/cafe_hop/cafes/{{ cafe.id }}/">		{{ cafe.name }}</a></li>
+		{% for key, value in cafe_dict.items %}
+			
+			<li><a href="/cafe_hop/cafes/{{ key.id }}/">{{ key.name }}</a></li>
+			<li>{{value}}<li>
 			{% endfor %}
 		</ul>
 	</div>

@@ -9,9 +9,20 @@ import pytz
 
 def home(request):
 	cafes = Cafe.objects.all()
+	cafe_dict = {}
+	for cafe in cafes:
+		ratings = Rating.objects.filter(cafe = cafe)
+		average = float(sum(rating.value for rating in ratings))/len(ratings)
+		cafe_dict[cafe] = average
+
+
+
 	# display cafes with ratings
-	context = {'cafe_list': cafes}
+	context = {'cafe_dict': cafe_dict}
 	return render(request, 'cafe_hop/index.html', context)
+
+
+
 
 
 

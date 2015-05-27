@@ -7,7 +7,7 @@ from cafe_hop.models import Cafe, Rating, Comment
 #for displaying ratings
 class RatingAdmin(admin.ModelAdmin):
 	fieldsets = [
-	(None, {'fields': ['value']}),
+	(None, {'fields': ['value', 'cafe']}),
 	]
 
 
