@@ -1,0 +1,26 @@
+{% load staticfiles %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'cafe_hop/style.css' %}" />
+
+<link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic|Ek+Mukta:200,300,400,500,600,700,800' rel='stylesheet' type='text/css'>
+
+<div id = 'title-font'>
+	<h1>Cafe Hop</h1>
+	<p>Cafes:</p>
+
+
+
+{% if cafe_list %}
+	<div id = 'menu-centered'>
+		<ul>
+		{% for cafe in cafe_list %}
+			<li><a href="/cafe_hop/cafes/{{ cafe.id }}/">		{{ cafe.name }}</a></li>
+			{% endfor %}
+		</ul>
+	</div>
+{% else %}
+	<p>No cafes are available.</p>
+{% endif %}
+
+
+
