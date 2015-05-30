@@ -6,6 +6,7 @@ from django.template import RequestContext, loader
 import pytz
 from forms import RatingForm
 from django.http import HttpResponseRedirect
+from django.contrib import messages
 
 
 # Create your views here.
@@ -32,9 +33,16 @@ def rate(request, cafe_id):
 	
 	print request.POST
 	if request.method == 'POST':
-		value = int(request.POST['rating'])
+		try:
+			value = int(request.POST['rating'])
+		except ValueError:
+			messages.add_message(request, messages.INFO, 'please choose a valid rating')
+			return redirect('/cafe_hop/')
 		cafe = Cafe.objects.get(id = cafe_id)
 		now = datetime.now()
+		if (value > 5 or value < 1):
+			messages.add_message(request, messages.INFO, 'please choose rating from 1-5')
+			return redirect('/cafe_hop/')
 		rating = Rating(value = value, cafe = cafe, time = now)
 		rating.save()
 		# form = RatingForm(request.POST)
@@ -49,4 +57,6 @@ def rate(request, cafe_id):
 
 	# return render(request, 'cafe_hop/rate.html', {'form': form})
 
+def cafe(request, cafe_id):
+	return redirect('/cafe_hop/')
 
