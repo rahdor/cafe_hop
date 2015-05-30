@@ -92,3 +92,11 @@ body{
 	background-size: cover;
 	
 }
+
+progress {
+ width: 500px;   
+ border: 1px solid aquamarine ;
+ position: relative;
+ padding: 3px;
+}
+

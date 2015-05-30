@@ -32,6 +32,7 @@ def rate(request, cafe_id):
 	
 	print request.POST
 	if request.method == 'POST':
+		print request.POST
 		value = int(request.POST['rating'])
 		cafe = Cafe.objects.get(id = cafe_id)
 		now = datetime.now()
