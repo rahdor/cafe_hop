@@ -20,7 +20,9 @@
 		{% for key, value in cafe_dict.items %}
 			
 			<li><a href="/cafe_hop/cafes/{{ key.id }}/">{{ key.name }}</a></li>
-			<li>{{value}}<li>
+
+			<progress id = 'progressBar' value = {{value}} max = '5'></progress>
+
 
 			<form action="/cafe_hop/rate/{{ key.id }}/" method="POST">
 				<input type="integer" name = "rating" />
