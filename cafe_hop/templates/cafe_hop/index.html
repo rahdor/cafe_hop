@@ -4,6 +4,10 @@
 
 <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic|Ek+Mukta:200,300,400,500,600,700,800' rel='stylesheet' type='text/css'>
 
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+
+
+
 <div id = 'title-font'>
 	<h1>Cafe Hop</h1>
 	<p>Cafes:</p>
@@ -17,6 +21,14 @@
 			
 			<li><a href="/cafe_hop/cafes/{{ key.id }}/">{{ key.name }}</a></li>
 			<li>{{value}}<li>
+
+			<form action="/cafe_hop/rate/{{ key.id }}/" method="POST">
+				<input type="integer" name = "rating" />
+    			{% csrf_token %}
+			    {{ form.as_p }}
+			    <input type="submit" value="Rate" />
+			</form>
+
 			{% endfor %}
 		</ul>
 	</div>
