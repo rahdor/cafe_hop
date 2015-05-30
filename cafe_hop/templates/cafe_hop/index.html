@@ -19,8 +19,9 @@
 {% endif %}
 
 <div id = 'title-font'>
-	<h1>Café Hop</h1>
-	<p>Cafes:</p>
+	<h1>Cafe Hop</h1>
+	<p>How full is your favorite Cafe?</p>
+<!-- 	<p>Cafés:</p> -->
 
 
 
@@ -35,10 +36,10 @@
 
 
 			<form action="/cafe_hop/rate/{{ key.id }}/" method="POST">
-				<input type="integer" name = "rating" value = "What do you think? (1-5)"/>
+				<input type="integer" name = "rating" value = "Rate it yourself! (1-5)"/>
     			{% csrf_token %}
 			    {{ form.as_p }}
-			   	<input type="submit" name = "Rate" value = "Rate" style = .myButton/>
+
 			    
 			</form>
 

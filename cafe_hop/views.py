@@ -40,7 +40,7 @@ def rate(request, cafe_id):
 			return redirect('/cafe_hop/')
 		cafe = Cafe.objects.get(id = cafe_id)
 		now = datetime.now()
-		if (value > 5 or value < 1):
+		if (value > 5 or value < 0):
 			messages.add_message(request, messages.INFO, 'please choose rating from 1-5')
 			return redirect('/cafe_hop/')
 		rating = Rating(value = value, cafe = cafe, time = now)
