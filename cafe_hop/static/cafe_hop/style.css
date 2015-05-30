@@ -3,7 +3,7 @@ li a:link{
 	text-align: left;
 	padding: 0;
 	margin: 0;
-	color: black;
+	color: white;
 	font-family: 'Lato', sans-serif;	
 	letter-spacing: -2px;
 	font-size: 25px;
@@ -14,7 +14,7 @@ li a:link{
 }
 /* for visited links in list*/
 li a:visited{
-	color: black;
+	color: white;
 }
 
 /* for hovering over links in list*/
@@ -27,13 +27,14 @@ li a:hover{
 	text-align: left;
 	padding: 0;
 	margin: 0;
-	color: black;
+	color: white;
 	font-family: 'Lato', sans-serif;	
 	font-size: 70px;
 	font-style: normal;
-	font-weight: 300;
+	font-weight: 500;
 	line-height: 100.399999px;
-	letter-spacing: -2px;
+	letter-spacing: -6px;
+
 }
 
 /* for title font 'events today:' */
@@ -41,7 +42,7 @@ li a:hover{
 	text-align: left;
 	padding: 0;
 	margin: 0;
-	color: black;
+	color: white;
 	font-family: 'Lato', sans-serif;	
 	font-size: 30px;
 	font-style: normal;
@@ -66,7 +67,7 @@ li a:hover{
 	text-align: left;
 	padding: 0;
 	margin: 0;
-	color: black;
+	color: white;
 	font-family: 'Lato', sans-serif;	
 	font-size: 30px;
 	font-style: normal;
@@ -87,7 +88,7 @@ h1{
 }
 
 body{
-	background: aquamarine;
+	background: aquamarine url("images/background-1-2.jpg") no-repeat center center fixed;
 	background-size: cover;
 	
 }

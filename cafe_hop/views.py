@@ -15,7 +15,8 @@ def home(request):
 	cafes = Cafe.objects.all()
 	cafe_dict = {}
 	for cafe in cafes:
-		ratings = Rating.objects.filter(cafe = cafe)
+		CHECKTIME = datetime.now()-timedelta(minutes=30)
+		ratings = Rating.objects.filter(cafe = cafe, time__gte = CHECKTIME)
 		try:
 			average = float(sum(rating.value for rating in ratings))/len(ratings)
 		except ZeroDivisionError:
@@ -29,7 +30,6 @@ def home(request):
 
 def rate(request, cafe_id):
 	
-
 	print request.POST
 	if request.method == 'POST':
 		value = int(request.POST['rating'])
@@ -37,10 +37,10 @@ def rate(request, cafe_id):
 		now = datetime.now()
 		rating = Rating(value = value, cafe = cafe, time = now)
 		rating.save()
-		form = RatingForm(request.POST)
+		# form = RatingForm(request.POST)
 		# form.value = value
-		if form.is_valid():
-			return HttpResponseRedirect('/')	
+		# if form.is_valid():
+		# 	return HttpResponseRedirect('/')	
 	else:
 		form = RatingForm()
 
