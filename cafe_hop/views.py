@@ -3,7 +3,7 @@ from django.http import HttpResponse
 from models import Cafe, Rating, Comment
 from datetime import datetime, timedelta, time, date
 from django.template import RequestContext, loader
-import pytz
+
 from forms import RatingForm
 from django.http import HttpResponseRedirect
 from django.contrib import messages
@@ -15,6 +15,7 @@ def home(request):
 
 	cafes = Cafe.objects.all()
 	cafe_dict = {}
+
 	for cafe in cafes:
 		CHECKTIME = datetime.now()-timedelta(minutes=30)
 		ratings = Rating.objects.filter(cafe = cafe, time__gte = CHECKTIME)
@@ -22,7 +23,8 @@ def home(request):
 			average = float(sum(rating.value for rating in ratings))/len(ratings)
 		except ZeroDivisionError:
 			average = 'No ratings available'
-		cafe_dict[cafe] = average
+		cafe_dict[cafe] = [average, len(ratings)]
+	
 
 	# display cafes with ratings
 	context = {'cafe_dict': cafe_dict}

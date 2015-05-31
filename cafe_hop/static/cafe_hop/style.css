@@ -8,9 +8,10 @@ li a:link{
 	letter-spacing: -2px;
 	font-size: 25px;
 	font-style: normal;
-	font-weight: 300;
+	font-weight: 100;
 	line-height: 60.399999px;
 	text-decoration: none;
+
 }
 /* for visited links in list*/
 li a:visited{
@@ -97,20 +98,31 @@ body{
 
 progress {
 
-	 height:30px;
+	 height:50px;
 	 width: 500px;   
 	 border: 1px solid aquamarine ;
 	 position: relative;
-	 padding: 3px;
+	 padding: 10px;
  
 }
 
-progress#progressBar:hover:after {
+form{
+	padding: 10px;
 }
 
 #error{
 	color:red;
 }
 
+span{
+	color: white;
+	font-family: 'Lato', sans-serif;	
+	letter-spacing: -1px;
+	font-size: 15px;
+	word-spacing: 5px;
+	font-style: normal;
+	font-weight: 100;
+}
 
+.radioDiv label { color:blue; }
 
