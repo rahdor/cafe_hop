@@ -6,11 +6,12 @@ li a:link{
 	color: white;
 	font-family: 'Lato', sans-serif;	
 	letter-spacing: -2px;
-	font-size: 25px;
+	font-size: 40px;
 	font-style: normal;
-	font-weight: 100;
+	font-weight: 300;
 	line-height: 60.399999px;
 	text-decoration: none;
+	-webkit-font-smoothing: antialiased;
 
 }
 /* for visited links in list*/
@@ -36,6 +37,7 @@ li a:hover{
 	font-weight: 900;
 	line-height: 100.399999px;
 	letter-spacing: -10px;
+	-webkit-font-smoothing: antialiased;
 
 }
 
@@ -47,10 +49,25 @@ li a:hover{
 	color: aquamarine;
 	/*font-family: 'Lato', sans-serif;	*/
 	font-family: 'Dancing Script', cursive;
-	font-size: 30px;
+	font-size: 35px;
 	font-style: normal;
-	font-weight: 300;
+	font-weight: 700;
 	line-height: 60.399999px;
+	-webkit-font-smoothing: antialiased;
+}
+
+#title-font p1{
+	text-align: center;
+	padding: 0;
+	margin: 0;
+	color: white;
+	/*font-family: 'Lato', sans-serif;	*/
+	font-family: 'Dancing Script', cursive;
+	font-size: 35px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: 60.399999px;
+	-webkit-font-smoothing: antialiased;
 }
 
 
@@ -66,44 +83,64 @@ li a:hover{
     margin: 0;
 }
 	
-#home_button p:link{
-	text-align: center;
+#home_button a{
+	text-align: left;
 	padding: 0;
 	margin: 0;
-	color: white;
-	font-family: 'Lato', sans-serif;	
+	color: aquamarine;
+	font-family: 'Dancing Script', cursive;	
 	font-size: 30px;
 	font-style: normal;
 	font-weight: 300;
 	line-height: 60.399999px;
+	text-decoration: none;
+	-webkit-font-smoothing: antialiased;
 } 
 
 h1{
 	text-align: center;
 	padding: 0;
 	margin: 0;
-	color: red;
+	color: white;
 	font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Geneva, Verdana, sans-serif;
 	font-size: 24px;
 	font-style: normal;
 	font-weight: 200;
 	line-height: 26.399999px;
+	-webkit-font-smoothing: antialiased;
 }
 
 body{
 	background: aquamarine url("images/background-1-2.jpg") no-repeat center center fixed;
 	background-size: cover;
+	-webkit-font-smoothing: subpixel-antialiased;
 	
 }
 
 progress {
-
+	 text-align: center;
 	 height:50px;
 	 width: 500px;   
 	 border: 1px solid aquamarine ;
 	 position: relative;
 	 padding: 10px;
  
+}
+
+
+#title-font-2 h1{
+	text-align: center;
+	padding: 20;
+	margin: 0;
+	color: white;
+	font-family: 'Lato', sans-serif;	
+	letter-spacing: -2px;
+	font-size: 100px;
+	font-style: normal;
+	font-weight: 300;
+	line-height: 60.399999px;
+	text-decoration: none;
+	-webkit-font-smoothing: antialiased;
 }
 
 form{
@@ -118,11 +155,23 @@ span{
 	color: white;
 	font-family: 'Lato', sans-serif;	
 	letter-spacing: -1px;
-	font-size: 15px;
+	font-size: 20px;
 	word-spacing: 5px;
 	font-style: normal;
-	font-weight: 100;
+	font-weight: 300;
+	-webkit-font-smoothing: antialiased;
 }
 
-.radioDiv label { color:blue; }
+#cafe-menu-font{
+	color: white;
+	font-family: 'Lato', sans-serif;	
+	letter-spacing: -1px;
+	font-size: 30px;
+	word-spacing: 5px;
+	font-style: normal;
+	font-weight: 300;
+	-webkit-font-smoothing: antialiased;
+}
+
+
 

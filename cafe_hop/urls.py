@@ -8,5 +8,7 @@ urlpatterns = patterns('',
 	url(r'^$', views.home, name = 'home'),
 	url(r'^rate/(?P<cafe_id>\d+)/$', views.rate, name = 'rate'),
 	url(r'^cafes/(?P<cafe_id>\d+)/$', views.cafe, name = 'cafe'),
+	url(r'^comment/(?P<cafe_id>\d+)/$', views.comment, name = 'cafe'),
+
 
 )
