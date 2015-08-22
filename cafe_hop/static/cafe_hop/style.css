@@ -24,6 +24,10 @@ li a:hover{
 	color: red;
 }
 
+#cafe-name img{
+	position: fixed;
+}
+
 /* for title font header*/
 #title-font h1{
 	text-align: center;
@@ -109,6 +113,12 @@ hr {
     padding: 0;
     margin: 0;
 }
+#menu-centered img{
+	max-width: 100%;
+	max-height: auto;
+/*	margin-right: auto;
+	margin-left: auto;
+*/}
 	
 #home_button a{
 	text-align: left;

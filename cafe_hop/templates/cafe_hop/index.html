@@ -30,9 +30,11 @@
 <div id = "navi">
 	<ul>
 		<li>
+
 			<a href = "/cafe_hop/">
 				<img src ="../../static/cafe_hop/images/Home.png">
 			</a>
+
 		</li>
 		<li>	
 			<a href = "/cafe_hop/about/">
@@ -51,10 +53,12 @@
 	<div id = 'menu-centered'>
 		<ul>
 		{% for key, value in cafe_dict.items %}
-			
+
 			<li>
 				<img src ="../../static/cafe_hop/images/{{ key.name }}.png">
-			</li> <br>
+			</li> 
+
+			<br>
 
 			<progress id = 'progressBar' value = {{value.0}} max = '5' display = true></progress> <br>
 
