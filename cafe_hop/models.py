@@ -3,8 +3,6 @@ from datetime import date, datetime
 from django.utils import timezone
 
 
-# Create your models here.
-
 
 now = datetime.now()
 

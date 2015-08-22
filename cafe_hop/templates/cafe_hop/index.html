@@ -22,18 +22,39 @@
 {% endif %}
 
 <div id = 'title-font'>
-	<h1>Cafe Hop</h1>
-	<p>How full is your favorite Cafe?</p>
+	<img src ="../../static/cafe_hop/images/Title Up.png">
+</div>
 
+<hr>
 
-
+<div id = "navi">
+	<ul>
+		<li>
+			<a href = "/cafe_hop/">
+				<img src ="../../static/cafe_hop/images/Home.png">
+			</a>
+		</li>
+		<li>	
+			<a href = "/cafe_hop/about/">
+				<img src ="../../static/cafe_hop/images/About.png">
+			</a>
+		</li>
+		<li>
+			<a href = "/cafe_hop/music/">
+				<img src ="../../static/cafe_hop/images/Music.png">
+			</a>
+		</li>
+	</ul>
+</div>
 
 {% if cafe_dict %}
 	<div id = 'menu-centered'>
 		<ul>
 		{% for key, value in cafe_dict.items %}
 			
-			<li><a href="/cafe_hop/cafes/{{ key.id }}/">{{ key.name }}</a></li> <br>
+			<li>
+				<img src ="../../static/cafe_hop/images/{{ key.name }}.png">
+			</li> <br>
 
 			<progress id = 'progressBar' value = {{value.0}} max = '5' display = true></progress> <br>
 

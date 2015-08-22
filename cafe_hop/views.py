@@ -9,8 +9,7 @@ from django.http import HttpResponseRedirect
 from django.contrib import messages
 from collections import OrderedDict
 import pytz
-
-# Create your views here.
+import json
 
 CHECKTIME = datetime.now()-timedelta(minutes=30)
 
@@ -45,12 +44,24 @@ def home(request):
 	# get cafes, store in ordered dictionary with key: cafe value: [average rating, number of ratings]
 	cafes = Cafe.objects.order_by('name')
 	cafe_dict = OrderedDict()
+
+	# trying
+	cafe_dict_2 = OrderedDict()
+	for cafe in cafes:
+		cafe_dict_2[cafe.name] = moving_average_ratings(cafe, CHECKTIME)
+	print(json.dumps(cafe_dict_2))	
+
+	# end trying
+
 	for cafe in cafes:
 		cafe_dict[cafe] = moving_average_ratings(cafe, CHECKTIME)
 		
 	# display cafes with ratings and con
 	context = {'cafe_dict': cafe_dict}
+	# print(str(json.dumps(context)))
 	return render(request, 'cafe_hop/index.html', context)
+
+
 
 
 def rate(request, cafe_id):
@@ -105,8 +116,9 @@ def comment(request, cafe_id):
 
 def music(request):
 	# redirects to music
-	context = {}
-	return render(request, 'cafe_hop/music.html', context)
+	return render(request, 'cafe_hop/music.html', {})
 	
+def about(request):
+	return render(request, 'cafe_hop/about.html', {})
 
 

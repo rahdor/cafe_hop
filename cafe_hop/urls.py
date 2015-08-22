@@ -10,5 +10,5 @@ urlpatterns = patterns('',
 	url(r'^cafes/(?P<cafe_id>\d+)/$', views.cafe, name = 'cafe'),
 	url(r'^comment/(?P<cafe_id>\d+)/$', views.comment, name = 'cafe'),
 	url(r'^music/', views.music, name = 'music'),
-
+	url(r'^about/', views.about, name = 'about'),
 )
