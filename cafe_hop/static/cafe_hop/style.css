@@ -45,6 +45,7 @@ li a:hover{
 }
 
 #title-font img{
+	max-width: 100%;
 	display: block;
 	margin-top: 50px;
 	margin-left: auto;
@@ -52,10 +53,12 @@ li a:hover{
 }
 
 #navi{
+	max-width: 100%;
 	text-align: center;
 }
 
 #navi li{
+	max-width: 100%;
 	display: inline-block;
 	padding-left: 55px;
 	padding-right: 55px;
@@ -113,6 +116,7 @@ hr {
     padding: 0;
     margin: 0;
 }
+
 #menu-centered img{
 	max-width: 100%;
 	max-height: auto;
@@ -124,8 +128,8 @@ hr {
 	text-align: left;
 	padding: 0;
 	margin: 0;
-	color: aquamarine;
-	font-family: 'Dancing Script', cursive;	
+	color: #CCFFFF;
+	font-family: Lato;	
 	font-size: 30px;
 	font-style: normal;
 	font-weight: 300;
@@ -211,17 +215,21 @@ span{
 	-webkit-font-smoothing: antialiased;
 }
 
-#music_button a{
-	text-align: center;
-	padding: 0;
-	margin: 0;
-	color: aquamarine;
-	font-family: 'Dancing Script', cursive;	
+#about-font{
+	color: white;
+	font-family: 'Lato', sans-serif;	
+	letter-spacing: -1px;
 	font-size: 30px;
+	word-spacing: 5px;
 	font-style: normal;
 	font-weight: 300;
-	line-height: 60.399999px;
-	text-decoration: none;
-	bottom: 0px;
 	-webkit-font-smoothing: antialiased;
+}
+
+
+
+#current a{
+	
+	
+
 }
