@@ -34,10 +34,11 @@ def moving_average_ratings(cafe, time):
 			print (val, rating.time, rating.value)
 			num += (rating.value)*val
 			den += val
-		average = num/den
+		average = round(((num/den)/5*100), 1)
 	except ZeroDivisionError:
 		average = 'No ratings available'
 	return [average, len(ratings)]
+
 
 
 def home(request):
@@ -84,7 +85,7 @@ def rate(request, cafe_id):
 		rating.save()
 	else:
 		form = RatingForm()
-	return redirect('/cafe_hop/')
+	return redirect('/')
 
 
 
@@ -112,7 +113,7 @@ def comment(request, cafe_id):
 		comment.save()
 		return redirect('/cafe_hop/cafes/' + cafe_id + '/')
 	else:
-		return redirect('/cafe_hop/')
+		return redirect('/')
 
 def music(request):
 	# redirects to music

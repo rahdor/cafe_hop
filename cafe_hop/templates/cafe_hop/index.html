@@ -1,3 +1,5 @@
+
+
 {% load staticfiles %}
 
 <link rel="stylesheet" type="text/css" href="{% static 'cafe_hop/style.css' %}" />
@@ -8,8 +10,10 @@
 
 <link href='http://fonts.googleapis.com/css?family=Dancing+Script' rel='stylesheet' type='text/css'>
 
-
-
+<head>
+	<link rel="icon" type = "image/ico" href="../../static/cafe_hop/images/favicon.ico">
+	<link rel="apple-touch-icon" href="../../static/cafe_hop/images/favicon-2.png"/>
+</head>
 
 {% if messages %}
 <div id = 'error'>
@@ -31,19 +35,19 @@
 	<ul>
 		<li>
 			<div id = "current">
-			<a href = "/cafe_hop/">
+			<a href = "/">
 				<img src ="../../static/cafe_hop/images/HOME.png">
 			</a>
 			</div>
 
 		</li>
 		<li>	
-			<a href = "/cafe_hop/about/">
+			<a href = "/about/">
 				<img src ="../../static/cafe_hop/images/ABOUT.png">
 			</a>
 		</li>
 		<li>
-			<a href = "/cafe_hop/music/">
+			<a href = "/music/">
 				<img src ="../../static/cafe_hop/images/MUSIC.png">
 			</a>
 		</li>
@@ -57,17 +61,38 @@
 
 			<li>
 				<img src ="../../static/cafe_hop/images/{{ key.name }}.png">
-			</li> 
+			</li><br>
+			<div id = 'content-container'>
+			<div id = 'fullness'>
+					{% if value.0 != 'No ratings available' %}
+						{% if value.1 == 1 %}
+							<span>Based on {{ value.1 }} review in the last 20 minutes, {{ key.name }} is {{ value.0 }}% full.</span> <br>
+						{% else %}
+							<span>Based on {{ value.1 }} reviews in the last 20 minutes, {{ key.name }} is {{ value.0 }}% full.</span> <br>
+						{% endif %}
+				
+					{% else %}
+						<span>No ratings are available for {{ key.name }} at this time.</span>
 
+					{% endif %}
+			</div>
+
+
+			{% if value.0 == 5 %}
+				<div id = 'full-bar'>
+					<progress id = 'progressBar' value = {{value.0}} max = '100' display = true></progress> <br>
+				</div>
+			{% else %}
+				
+				<progress id = 'progressBar' value = {{value.0}} max = '100' display = true></progress> <br>
+
+			{% endif %}
+			
 			<br>
-
-			<progress id = 'progressBar' value = {{value.0}} max = '5' display = true></progress> <br>
-
-			<span>Based on {{ value.1}} reviews.</span> <br>
 
 				<span>How full do you think {{key.name}} is? </span> <br>
 
-				<form action="/cafe_hop/rate/{{ key.id }}/" method="POST">
+				<form action="/rate/{{ key.id }}/" method="POST">
 				
 					<input type = "radio" name = "rating" value = "0"onclick="this.form.submit();"><span>0%</span>
 					<input type = "radio" name = "rating" value = "1"onclick="this.form.submit();"><span>20%</span>
@@ -82,8 +107,9 @@
 				</form>
 		
 
-
+			</div>	
 			{% endfor %}
+			
 		</ul>
 	</div>
 {% else %}
