@@ -4,7 +4,6 @@ li a:link{
 	padding: 0;
 	margin: 0;
 	color: white;
-	font-family: 'Lato', sans-serif;	
 	letter-spacing: -2px;
 	font-size: 40px;
 	font-style: normal;
@@ -21,70 +20,178 @@ li a:visited{
 
 /* for hovering over links in list*/
 li a:hover{
-	color: red;
+	color: #B7B7B7;
 }
 
-/* for title font header*/
-#title-font h1{
+/*----INDEX.HTML----*/
+/*---Title---*/
+#title{
+	width: 368px;
+	margin-right: auto;
+	margin-left: auto;
 	text-align: center;
-	padding: 60;
-	margin: 0;
-	color: white;
-	font-family: 'Dancing Script', cursive;
-	font-size: 200px;
-	font-style: normal;
-	font-weight: 900;
-	line-height: 100.399999px;
-	letter-spacing: -10px;
-	-webkit-font-smoothing: antialiased;
-
+	margin-top: -25px;
 }
 
-#title-font img{
-	display: block;
-	margin-top: 50px;
+#title-logo{
+	width: 300px;
+	float: left;
+	margin-left: 12px;
+	margin-top: 36px;
+	text-align: center;
+}
+
+#logo{
+	width: 45px;
+	margin-top: 30px;
+	padding-top: 8px;
+	float: left;
+	margin-left: 6px;
+}
+
+#howfull{
+	clear: both;
+	font-family: 'Open Sans';
+	font-weight: lighter;	
+	color: #C6F3EA;
+}
+
+hr{
+	margin-bottom: -20px;
+	width: 90%;
+}
+
+/*---Navi---*/
+#navi{
+	width: 500px;
 	margin-left: auto;
 	margin-right: auto;
-}
-
-#navi{
-	text-align: center;
+	margin-bottom: 50px;
 }
 
 #navi li{
 	display: inline-block;
-	padding-left: 55px;
-	padding-right: 55px;
-	padding-top: 10px;
-	padding-bottom: 100px;
+	padding-left: 45px;
+	padding-right: 45px;
 }
 
-#menu-centered img{
-	max-width: 100%;
-	max-height: auto;
+#Home{
+	font-size: 16px;
+	font-family: 'Open Sans';
+	font-weight: lighter;		
 }
+
+#About{
+	font-size: 16px;
+	font-family: 'Open Sans';
+	font-weight: lighter;		
+}
+
+#Music{
+	font-size: 16px;
+	font-family: 'Open Sans';
+	font-weight: lighter;		
+}
+
+/*---Cafe Info---*/
+#click{
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+#click-to{
+	font-size: 12px;
+	font-family: 'Open Sans';
+	color: #C6F3EA;
+	display: inline;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+#triangle{
+	width: 12px;
+}
+
+#cafe-image{
+	width: 600px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/*.fake-link {
+    cursor: pointer;
+}
+*/
+#menu-centered ul {
+	text-align: center;
+    padding: 0;
+    margin: 0;
+}
+
+#content-container{
+	border-style: solid;
+	border-color: white;
+	border-width: 1px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 597px;
+	margin-bottom: 20px;
+}
+
+#divider{
+	margin-top: 28px;
+	margin-bottom: 10px;
+	width: 200px;
+}
+
+input[type="radio"]{
+}
+
+#percentage{
+	display: inline;
+	color: white;
+	font-family: 'Open Sans';	
+	font-size: 13px;
+	font-weight: lighter;
+	font-weight: 300;
+	-webkit-font-smoothing: antialiased;
+	margin-left: 5px;
+	margin-right: 10px;
+}
+
+/*---MADE IN//FOR BERKELEY---*/
+#made-for{
+	text-align: center;
+	color: white;
+	font-size: 12px;
+	font-family: 'Open Sans';	
+	font-weight: lighter;
+	margin-top: 50px;
+	margin-bottom: 20px;
+}
+
 
 /* for title font 'events today:' */
-#title-font p{
+/*#title-font p{
 	text-align: center;
 	padding: 0;
 	margin: 0;
 	color: aquamarine;
-	/*font-family: 'Lato', sans-serif;	*/
+	font-family: 'Lato', sans-serif;	
 	font-family: 'Dancing Script', cursive;
 	font-size: 35px;
 	font-style: normal;
 	font-weight: 700;
 	line-height: 60.399999px;
 	-webkit-font-smoothing: antialiased;
-}
+}*/
 
-#title-font p1{
+/*#title-font p1{
 	text-align: center;
 	padding: 0;
 	margin: 0;
 	color: white;
-	/*font-family: 'Lato', sans-serif;	*/
+	font-family: 'Lato', sans-serif;	
 	font-family: 'Dancing Script', cursive;
 	font-size: 35px;
 	font-style: normal;
@@ -101,21 +208,16 @@ hr {
     border-width: 1px;
     margin-top: 28px;
 }
+*/
 
-
-#bottom-refresh{
+/*#bottom-refresh{
 	text-align: left;
 	position: fixed;
 	bottom: 0px;
-}
+}*/
 
-#menu-centered ul {
-    text-align: center;
-    padding: 0;
-    margin: 0;
-}
 	
-#home_button a{
+/*#home_button a{
 	text-align: left;
 	padding: 0;
 	margin: 0;
@@ -129,16 +231,14 @@ hr {
 	position:fixed;
 	bottom: 0px;
 	-webkit-font-smoothing: antialiased;
-} 
+} */
 
 h1{
 	text-align: center;
 	padding: 0;
 	margin: 0;
 	color: white;
-	font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Geneva, Verdana, sans-serif;
 	font-size: 24px;
-	font-style: normal;
 	font-weight: 200;
 	line-height: 26.399999px;
 	-webkit-font-smoothing: antialiased;
@@ -168,11 +268,11 @@ progress[value]::-webkit-progress-bar {
 
 progress[value]::-webkit-progress-value {
   background-color: #C6F3EA;
-  border-top-left-radius: 25px;
-  border-bottom-left-radius: 25px;
+/*  border-top-left-radius: 25px;
+  border-bottom-left-radius: 25px;*/
+  border-radius: 25px;
  }
-
-
+/*
 #title-font-2 h1{
 	text-align: center;
 	padding: 20;
@@ -186,7 +286,7 @@ progress[value]::-webkit-progress-value {
 	line-height: 60.399999px;
 	text-decoration: none;
 	-webkit-font-smoothing: antialiased;
-}
+}*/
 
 form{
 	padding: 10px;
@@ -198,16 +298,14 @@ form{
 
 span{
 	color: white;
-	font-family: 'Lato', sans-serif;	
-	letter-spacing: -1px;
-	font-size: 20px;
-	word-spacing: 5px;
-	font-style: normal;
+	font-family: 'Open Sans';	
+	font-size: 15px;
+	font-weight: lighter;
 	font-weight: 300;
 	-webkit-font-smoothing: antialiased;
 }
 
-#cafe-menu-font{
+/*#cafe-menu-font{
 	color: white;
 	font-family: 'Lato', sans-serif;	
 	letter-spacing: -1px;
@@ -216,8 +314,8 @@ span{
 	font-style: normal;
 	font-weight: 300;
 	-webkit-font-smoothing: antialiased;
-}
-
+}*/
+/*
 #footer img{
 	padding-top: 120px;
 	padding-bottom: 30px;
@@ -225,28 +323,10 @@ span{
 	margin-left: auto;
 	margin-right: auto;
 }
+*/
 
 #fullness {
 	padding-top: 20px;
-}
-
-#content-container{
-	border-style: solid;
-	border-width: 1px;
-	border-color: white;
-	margin-left: 197px;
-	margin-right: 197px;
-	padding-bottom: 10px;
-	margin-bottom: 20px;
-}
-
-#content-line {
-	display: block;
-    width: 180px;
-    margin-left: auto;
-    margin-right: auto;
-    border-width: 1px;
-    margin-bottom: 20px;
 }
 
 #vote {
@@ -258,3 +338,37 @@ span{
 	padding-left
 }
 
+/*----ABOUT.HTML----*/
+#about-text{
+    text-align: justify;
+	font-family: 'Open Sans';	
+	font-size: 14px;
+	font-weight: lighter;	
+	color: white;
+	width: 770px;
+	margin-left: auto;
+	margin-right: auto;
+	line-height: 30px;
+	margin-top: -25px;
+}
+
+.portfolio{
+	text-decoration: none;
+	color: #C6F3EA;
+}
+
+.portfolio:active{
+	color: #C6F3EA;
+}
+
+/* for hovering over links in list*/
+.portfolio:hover{
+	color: #B7B7B7;
+}
+
+
+/*----MUSIC.HTML----*/
+#music-player{
+	text-align: center;
+	margin-bottom: 50px;
+}

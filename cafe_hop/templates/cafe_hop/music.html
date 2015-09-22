@@ -7,40 +7,35 @@
 <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
 
 <link href='http://fonts.googleapis.com/css?family=Dancing+Script' rel='stylesheet' type='text/css'>
+<!-- <link href='http://www.dafont.com/bebas-neue.font' rel='stylesheet' type='text/css'>
+ -->
+ <link href='https://fonts.googleapis.com/css?family=Open+Sans:300&subset=latin,greek-ext' rel='stylesheet' type='text/css'>
+
 
 <head>
 	<link rel="icon" type = "image/ico" href="../../static/cafe_hop/images/favicon.ico">
 	<link rel="apple-touch-icon" href="../../static/cafe_hop/images/favicon-2.png"/>
 </head>
 
-<div id = 'title-font'>
-	<img src ="../../static/cafe_hop/images/Title Up.png">
+<div id = 'title'>
+	<img id="logo" src ="../../static/cafe_hop/images/Logo.png">
+<!-- 	<h1 id="cafehop">C A F E &nbsp;H O P</h1> -->
+	<img id="title-logo" src ="../../static/cafe_hop/images/title.png">
+	<p id= "howfull">H O W &nbsp;F U L L &nbsp;I S &nbsp;Y O U R &nbsp;F A V O R I T E &nbsp;C A F E ?</p>
 </div>
 
 <hr>
 
 <div id = "navi">
 	<ul>
-		<li>
-
-			<a href = "/">
-				<img src ="../../static/cafe_hop/images/HOME.png">
-			</a>
-
-		</li>
-		<li>	
-			<a href = "/about/">
-				<img src ="../../static/cafe_hop/images/ABOUT.png">
-			</a>
-		</li>
-		<li>
-			<a href = "/music/">
-				<img src ="../../static/cafe_hop/images/MUSIC.png">
-			</a>
-		</li>
+		<li><a href="/" id = "Home">H O M E</a></li>
+		<li><a href="/about/" id = "About">A B O U T</a></li>
+		<li><a href="/music/" id = "Music">M U S I C</a></li>		
 	</ul>
 </div>
 
+<div id = "music-player">
+	<iframe width="70%" height="450" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/71980063%3Fsecret_token%3Ds-jRG9L&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe>
+</div>
 
-<iframe width="100%" height="450" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/71980063%3Fsecret_token%3Ds-jRG9L&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe>
-
+<div id ="made-for">M A D E &nbsp;I N &nbsp;// &nbsp;F O R &nbsp;B E R K E L E Y
