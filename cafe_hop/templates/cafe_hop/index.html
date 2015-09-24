@@ -67,9 +67,9 @@
 				<div id = 'fullness'>
 					{% if value.0 != 'No ratings available' %}
 						{% if value.1 == 1 %}
-							<span>Based on {{ value.1 }} review in the last 20 minutes, {{ key.name }} is {{ value.0 }}% full.</span> <br>
+							<span>Based on {{ value.1 }} review in the last hour, {{ key.name }} is {{ value.0 }}% full.</span> <br>
 						{% else %}
-							<span>Based on {{ value.1 }} reviews in the last 20 minutes, {{ key.name }} is {{ value.0 }}% full.</span> <br>
+							<span>Based on {{ value.1 }} reviews in the last hour, {{ key.name }} is {{ value.0 }}% full.</span> <br>
 						{% endif %}
 				
 					{% else %}

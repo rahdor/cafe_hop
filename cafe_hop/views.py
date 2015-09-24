@@ -11,7 +11,7 @@ from collections import OrderedDict
 import pytz
 import json
 
-CHECKTIME = datetime.now()-timedelta(minutes=30)
+
 
 
 def average_ratings(cafe, time):
@@ -29,7 +29,7 @@ def moving_average_ratings(cafe, time):
 		num = 0.0
 		den = 0.0
 		for rating in ratings:
-			then = datetime.utcnow().replace(tzinfo = pytz.utc)-timedelta(minutes = 30)
+			then = datetime.utcnow().replace(tzinfo = pytz.utc)-timedelta(minutes = 60)
 			val = (rating.time-then).seconds/60.0
 			print (val, rating.time, rating.value)
 			num += (rating.value)*val
@@ -43,6 +43,7 @@ def moving_average_ratings(cafe, time):
 
 def home(request):
 	# get cafes, store in ordered dictionary with key: cafe value: [average rating, number of ratings]
+	CHECKTIME = datetime.now()-timedelta(minutes=60)
 	cafes = Cafe.objects.order_by('name')
 	cafe_dict = OrderedDict()
 
@@ -90,6 +91,7 @@ def rate(request, cafe_id):
 
 
 def cafe(request, cafe_id):
+	CHECKTIME = datetime.now()-timedelta(minutes=60)
 	#display cafe information
 	cafe = Cafe.objects.get(id = cafe_id)
 	value_list = average_ratings(cafe, CHECKTIME)
