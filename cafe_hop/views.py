@@ -1,4 +1,6 @@
 from django.shortcuts import render, redirect
+from django.core.serializers.json import DateTimeAwareJSONEncoder
+
 from django.http import HttpResponse
 from models import Cafe, Rating, Comment
 from datetime import datetime, timedelta, time, date
@@ -31,7 +33,6 @@ def moving_average_ratings(cafe, time):
 		for rating in ratings:
 			then = datetime.utcnow().replace(tzinfo = pytz.utc)-timedelta(minutes = 60)
 			val = (rating.time-then).seconds/60.0
-			print (val, rating.time, rating.value)
 			num += (rating.value)*val
 			den += val
 		average = round(((num/den)/5*100), 1)
@@ -51,7 +52,7 @@ def home(request):
 	cafe_dict_2 = OrderedDict()
 	for cafe in cafes:
 		cafe_dict_2[cafe.name] = moving_average_ratings(cafe, CHECKTIME)
-	print(json.dumps(cafe_dict_2))	
+
 
 	# end trying
 
@@ -64,7 +65,31 @@ def home(request):
 	return render(request, 'cafe_hop/index.html', context)
 
 
+def validate(session, cafe_id):
+	# check if cafe is in sessions dictionary
+	if cafe_id not in session.keys():
+		session[cafe_id] = encodeDateTime(datetime.now() + timedelta(minutes = 1))
+	else:
+		checkdate = decodeDateTime(session[cafe_id])
+		if datetime.now() > checkdate:
+			print("checkdate " + str(checkdate))
+			print("now " + str(datetime.now()))
+			print("rated")
+			session[cafe_id] = encodeDateTime(datetime.now() + timedelta(minutes = 1))
+			return True
+		else:
+			
+			print("checkdate " + str(checkdate))
+			print("now " + str(datetime.now()))
+			print("did not rate")
 
+			return False
+
+def encodeDateTime(d):
+	return str(d)
+
+def decodeDateTime(d):
+	return datetime.strptime(d, "%Y-%m-%d %H:%M:%S.%f")
 
 def rate(request, cafe_id):
 	# create a rating object for a cafe from POST data
@@ -81,14 +106,20 @@ def rate(request, cafe_id):
 		# throw error/redirect if rating > 5 or < 0
 		if (value > 5 or value < 0):
 			messages.add_message(request, messages.INFO, 'please choose rating from 1-5')
-			return redirect('/cafe_hop/')
-		rating = Rating(value = value, cafe = cafe, time = now)
-		rating.save()
+			return redirect('/')
+		if validate(request.session, cafe_id):
+			rating = Rating(value = value, cafe = cafe, time = now)
+			rating.save()
+		else:
+			messages.add_message(request, messages.INFO, 'please wait before you rate again')
+			return redirect('/')
 	else:
 		form = RatingForm()
 	return redirect('/')
 
-
+def thanks(request):
+	context = {}
+	return render(request, 'cafe_hop/thanksbitch.html', context)
 
 def cafe(request, cafe_id):
 	CHECKTIME = datetime.now()-timedelta(minutes=60)

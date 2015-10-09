@@ -11,4 +11,5 @@ urlpatterns = patterns('',
 	url(r'^comment/(?P<cafe_id>\d+)/$', views.comment, name = 'cafe'),
 	url(r'^music/', views.music, name = 'music'),
 	url(r'^about/', views.about, name = 'about'),
+	url(r'^thanks/', views.thanks, name = 'thanks'),
 )
