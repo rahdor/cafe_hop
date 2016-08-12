@@ -69,6 +69,7 @@ def validate(session, cafe_id):
 	# check if cafe is in sessions dictionary
 	if cafe_id not in session.keys():
 		session[cafe_id] = encodeDateTime(datetime.now() + timedelta(minutes = 1))
+		return True
 	else:
 		checkdate = decodeDateTime(session[cafe_id])
 		if datetime.now() > checkdate:
